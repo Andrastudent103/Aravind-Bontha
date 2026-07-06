@@ -1,17 +1,93 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 
 const Hero = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <section className="hero-section" id="home">
       {/* Background Splitting */}
       <div className="hero-left-bg"></div>
       <div className="hero-right-bg"></div>
 
+      {/* Mobile Header (Visible only on mobile/tablet) */}
+      <div className="mobile-header">
+        <a href="#home" className="mobile-logo-container" aria-label="Home" onClick={closeMenu}>
+          <svg className="mobile-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M 50 15 L 20 80 L 35 80 L 42 62 L 58 62 L 65 80 L 80 80 Z" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="7" 
+              strokeLinejoin="miter"
+            />
+            <path 
+              d="M 42 62 C 45 52, 55 52, 58 62" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="7"
+            />
+            <circle cx="50" cy="40" r="4" fill="currentColor" />
+          </svg>
+        </a>
+        <button className={`hamburger-btn ${menuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle Menu">
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`mobile-nav-overlay ${menuOpen ? 'active' : ''}`}>
+        <div className="mobile-nav-header">
+          <a href="#home" className="mobile-logo-container" aria-label="Home" onClick={closeMenu}>
+            <svg className="mobile-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M 50 15 L 20 80 L 35 80 L 42 62 L 58 62 L 65 80 L 80 80 Z" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="7" 
+                strokeLinejoin="miter"
+              />
+              <path 
+                d="M 42 62 C 45 52, 55 52, 58 62" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="7"
+              />
+              <circle cx="50" cy="40" r="4" fill="currentColor" />
+            </svg>
+          </a>
+          <button className="close-btn" onClick={closeMenu} aria-label="Close Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <nav className="mobile-nav-links">
+          <a href="#about" className="mobile-nav-item" onClick={closeMenu}>About me</a>
+          <a href="#education" className="mobile-nav-item" onClick={closeMenu}>Education</a>
+          <a href="#certifications" className="mobile-nav-item" onClick={closeMenu}>Certifications</a>
+          <a href="#skills" className="mobile-nav-item" onClick={closeMenu}>Skills</a>
+          <a href="#experience" className="mobile-nav-item" onClick={closeMenu}>Experience</a>
+          <a href="#projects" className="mobile-nav-item" onClick={closeMenu}>Projects</a>
+          <a href="#contact" className="mobile-nav-contact-btn" onClick={closeMenu}>CONTACT ME</a>
+        </nav>
+      </div>
+
       {/* Main Container */}
       <div className="hero-container">
         
-        {/* Navigation Menu */}
+        {/* Navigation Menu (Desktop) */}
         <nav className="hero-nav">
           <a href="#about" className="nav-item nav-item-dark">About me</a>
           <a href="#education" className="nav-item nav-item-dark">Education</a>
@@ -30,17 +106,17 @@ const Hero = () => {
               <path 
                 d="M 50 15 L 20 80 L 35 80 L 42 62 L 58 62 L 65 80 L 80 80 Z" 
                 fill="none" 
-                stroke="#000000" 
+                stroke="currentColor" 
                 strokeWidth="7" 
                 strokeLinejoin="miter"
               />
               <path 
                 d="M 42 62 C 45 52, 55 52, 58 62" 
                 fill="none" 
-                stroke="#000000" 
+                stroke="currentColor" 
                 strokeWidth="7"
               />
-              <circle cx="50" cy="40" r="4" fill="#000000" />
+              <circle cx="50" cy="40" r="4" fill="currentColor" />
             </svg>
           </a>
 

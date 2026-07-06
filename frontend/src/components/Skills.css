@@ -205,31 +205,32 @@
   .skills-grid,
   .skills-grid-learning,
   .skills-grid-other {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px 20px;
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
   
   .skill-item {
-    width: 100px;
+    width: 100%;
+    max-width: 200px;
   }
   
   .skill-icon-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     margin-bottom: 12px;
   }
   
   .skill-icon-wrapper i {
-    font-size: 44px;
+    font-size: 48px;
   }
   
   .skill-flag-svg {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
   
   .skill-name {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1.5px;
   }
   
@@ -243,3 +244,4 @@
     margin-bottom: 25px;
   }
 }
+
