@@ -673,13 +673,16 @@
   }
 
   .profile-image {
-    height: 90%;
-    width: auto;
-    object-fit: contain;
-    margin-top: 40px; /* Blend nicely below header */
-    transform: scale(1.35); /* Zoom in to make Aravind's face much larger */
-    transform-origin: center 25%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 48% 5%;
+    margin-top: -;
+    transform: scale(1.1); /* Subtle zoom in addition to cover to fit face perfectly */
+    transform-origin: 48% 15%;
   }
+
+
 
   .speech-bubble,
   .bubble-decorations-svg {
@@ -693,19 +696,18 @@
     left: 0;
     width: 100%;
     height: 38%;
-    background-color: rgba(44, 44, 44, 0.85); /* Semi-transparent charcoal grey */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(30, 30, 30, 0.45); /* Highly transparent grey/black */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 5;
-    padding: 55px 8% 25px 8%;
+    padding: 60px 8% 30px 8%;
     display: flex;
     flex-direction: row !important;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center; /* Center items vertically within the slanted area */
     box-sizing: border-box;
     clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
   }
-
 
   .hero-left-content .logo-container {
     display: none !important; /* Hide desktop logo */
@@ -721,13 +723,13 @@
   .intro-greeting {
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff; /* White text for contrast on dark-grey bg */
+    color: #ffffff; /* White text for contrast on dark bg */
   }
 
   .intro-name {
     font-size: 30px;
     font-weight: 800;
-    color: #ffffff; /* White text for contrast on dark-grey bg */
+    color: #ffffff; /* White text for contrast on dark bg */
     line-height: 1.15;
     letter-spacing: -1px;
   }
@@ -748,12 +750,11 @@
   }
 
   .social-icon-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
     background-color: transparent !important;
     color: #ffffff !important;
-    border: 2px solid #ffffff !important;
+    border: none !important;
     box-shadow: none !important;
     display: flex;
     align-items: center;
@@ -762,10 +763,10 @@
   }
 
   .social-icon-btn:hover {
-    transform: scale(1.05);
-    background-color: #ffffff !important;
-    color: #2c2c2c !important;
+    transform: scale(1.15);
+    opacity: 0.8;
   }
+
 
   .icon-svg {
     width: 18px;
@@ -800,21 +801,25 @@
   }
 
   .profile-image {
-    height: 86%;
-    margin-top: 30px;
-    transform: scale(1.35); /* Zoom in to make Aravind's face much larger */
-    transform-origin: center 25%;
+     height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 48% 5%;
+    margin-top: 0;
+    transform: scale(1.1); /* Subtle zoom in addition to cover to fit face perfectly */
+    transform-origin: 48% 15%;
   }
+
 
   .hero-left-content {
     height: 40%;
     padding: 50px 6% 20px 6%;
-    background-color: rgba(44, 44, 44, 0.85); /* Semi-transparent charcoal grey */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(30, 30, 30, 0.45); /* Highly transparent grey/black */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    align-items: center;
   }
-
 
   .intro-name {
     font-size: 24px;
@@ -827,9 +832,14 @@
   }
 
   .social-icon-btn {
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
   }
+
 
   .icon-svg {
     width: 16px;
