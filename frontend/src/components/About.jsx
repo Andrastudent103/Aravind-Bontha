@@ -17,17 +17,7 @@ const About = () => {
           I observe, learn, adapt and execute!
         </p>
 
-        {/* Explore Button */}
-        <div className="about-explore-container">
-          <button className="about-explore-btn">EXPLORE</button>
-        </div>
 
-        {/* Divider (—— \\\/// ——) */}
-        <div className="about-divider">
-          <div className="divider-line"></div>
-          <div className="divider-pattern">\\\ ///</div>
-          <div className="divider-line"></div>
-        </div>
 
         {/* Services Grid */}
         <div className="services-grid">
@@ -88,13 +78,6 @@ const About = () => {
             </div>
           </div>
 
-        </div>
-
-        {/* Bottom Divider (—— \\\/// ——) */}
-        <div className="about-divider" style={{ marginTop: '50px', marginBottom: '20px' }}>
-          <div className="divider-line"></div>
-          <div className="divider-pattern">\\\ ///</div>
-          <div className="divider-line"></div>
         </div>
 
       </div>

@@ -26,3 +26,15 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+.app-container {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Mobile-only background override to prevent sub-pixel rendering gaps */
+@media (max-width: 768px) {
+  html, body, .app-container {
+    background-color: #eae7e1 !important;
+  }
+}

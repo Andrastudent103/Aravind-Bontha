@@ -64,6 +64,13 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  color: #111111; /* Set explicit color to prevent default visited link color (purple) */
+}
+
+.logo-container:visited,
+.logo-container:active,
+.logo-container:focus {
+  color: #111111;
 }
 
 .logo-svg {

@@ -293,6 +293,23 @@
   transform: rotate(10deg) scale(1.08);
 }
 
+/* Base wrapper (desktop) - behaves like a standard div */
+.certifications-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Hide overlay and toggle button on desktop/tablet */
+.certifications-fade-overlay {
+  display: none;
+}
+
+.certifications-toggle-container {
+  display: none;
+}
+
 /* Responsive Grid / Cards Styles */
 @media (max-width: 1200px) {
   .certifications-grid-landscape {
@@ -319,20 +336,103 @@
 
   .certifications-grid-landscape {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    gap: 25px;
+    max-width: 440px; /* Slimmer grid on mobile */
+    gap: 20px; /* Closer cards */
   }
 
   .cert-card-landscape {
     aspect-ratio: auto;
-    /* Reset aspect ratio to prevent compression */
-    min-height: 260px;
-    padding: 20px;
+    min-height: 205px; /* Sleeker height */
+    padding: 16px 20px; /* Reduced padding */
+  }
+
+  .cert-card-inner-border {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+  }
+
+  .cert-card-subtitle {
+    font-size: 8px;
   }
 
   .cert-card-title {
+    font-size: 11.5px;
     min-height: auto;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+  }
+
+  .cert-card-recipient-text {
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+
+  .cert-card-recipient-name {
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+  .cert-card-congratulations {
+    font-size: 7.5px;
+  }
+
+  .cert-card-footer {
+    margin-top: 6px;
+  }
+
+  .cert-footer-label {
+    font-size: 7px;
+  }
+
+  .cert-footer-value {
+    font-size: 8.5px;
+  }
+
+  .cert-footer-value.monospace {
+    font-size: 8px;
+  }
+
+  .cert-wax-seal {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cert-verify-btn-new {
+    padding: 3px 8px;
+    font-size: 8.5px;
+  }
+
+  /* COLLAPSE/EXPAND FUNCTIONALITY - MOBILE ONLY */
+  .certifications-wrapper {
+    max-height: 1500px; /* Mobile expanded */
+    transition: max-height 0.8s cubic-bezier(0.25, 1, 0.25, 1);
+    overflow: hidden;
+  }
+
+  .certifications-wrapper.collapsed {
+    max-height: 800px; /* Mobile collapsed: shows 3 cards, hides 4th completely to avoid line artifacts */
+  }
+
+  .certifications-fade-overlay {
+    display: block; /* Show only on mobile */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px; /* Tapered overlay height for smaller cards */
+    background: linear-gradient(to bottom, rgba(234, 231, 225, 0) 0%, rgba(234, 231, 225, 0.98) 60%, #eae7e1 100%);
+    pointer-events: auto; /* Enable clicks */
+    cursor: pointer;
+    z-index: 5;
+    opacity: 1;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .certifications-wrapper.expanded .certifications-fade-overlay {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
 }
 
@@ -343,36 +443,12 @@
 
   .certifications-header-box {
     border-width: 4px;
-    padding: 10px 28px;
+    padding: 10px 24px;
     margin-bottom: 45px;
   }
 
   .certifications-section-title {
     font-size: 22px;
     letter-spacing: 4px;
-  }
-
-  .cert-card-landscape {
-    padding: 16px;
-  }
-
-  .cert-card-inner-border {
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-  }
-
-  .cert-card-recipient-name {
-    font-size: 15px;
-  }
-
-  .cert-footer-right {
-    gap: 8px;
-  }
-
-  .cert-wax-seal {
-    width: 32px;
-    height: 32px;
   }
 }
