@@ -1,0 +1,218 @@
+/* IT BERRIES Section Container */
+.itberries-section {
+  position: relative;
+  width: 100%;
+  background-color: #181818; /* Elegant dark-grey theme */
+  color: #ffffff;
+  padding: 60px 0;
+  overflow: hidden; /* Ensures watermark doesn't cause horizontal scrolling */
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Central Alignment Container */
+.itberries-container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Left Content Column */
+.itberries-content {
+  width: 65%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  z-index: 2; /* Sits above watermark */
+  box-sizing: border-box;
+}
+
+/* Title Styling */
+.itberries-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Description Text Styling */
+.itberries-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #b3b3b3; /* Sleek light-grey for readability */
+  margin: 0;
+  font-weight: 400;
+  text-align: justify;
+}
+
+/* Action Container */
+.itberries-action {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* Vertical Bordered Read More Button */
+.itberries-btn {
+  background: transparent;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-top: none;
+  border-bottom: none;
+  padding: 12px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+/* Button Hover State */
+.itberries-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  letter-spacing: 4px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* Right Side Watermark */
+.itberries-watermark-container {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  width: 380px;
+  height: 380px;
+  color: #ffffff;
+  opacity: 0.05; /* Subtle branding element */
+  pointer-events: none; /* Interactive components aren't blocked */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itberries-watermark-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .itberries-section {
+    padding: 90px 0;
+  }
+
+  .itberries-content {
+    width: 80%;
+  }
+
+  .itberries-watermark-container {
+    width: 280px;
+    height: 280px;
+    right: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .itberries-content {
+    width: 100%;
+  }
+
+  .itberries-title {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+
+  .itberries-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .itberries-watermark-container {
+    opacity: 0.03; /* Make it even more subtle when behind full width text */
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itberries-section {
+    padding: 70px 0;
+  }
+
+  .itberries-title {
+    font-size: 24px;
+  }
+
+  .itberries-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .itberries-btn:hover {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* Inline Expandable Content Styling */
+.itberries-expanded-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s ease, 
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.5s ease;
+  margin-top: -25px; /* Offsets parent flex gap when collapsed */
+}
+
+.itberries-expanded-content.expanded {
+  max-height: 1500px; /* Large enough to accommodate all text content */
+  opacity: 1;
+  transform: scaleY(1);
+  margin-top: 0px; /* Reset margin to show full normal gaps */
+}
+
+/* Staggered entrance animation for description paragraphs */
+.itberries-expanded-content p {
+  transform: translateY(15px);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+.itberries-expanded-content.expanded p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.itberries-expanded-content.expanded p:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.itberries-expanded-content.expanded p:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.itberries-expanded-content.expanded p:nth-child(3) {
+  transition-delay: 0.4s;
+}

@@ -1,0 +1,245 @@
+/* Skills Section styling */
+.skills-section {
+  position: relative;
+  width: 100%;
+  /* Light radial gradient to match the clean mockup feel */
+  background-color: #eae7e1;
+  color: #000000;
+  padding: 80px 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Header border box */
+.skills-header-box {
+  border: 7px solid #000000;
+  padding: 16px 54px;
+  margin-bottom: 75px;
+  display: inline-block;
+  background-color: transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+}
+
+.skills-header-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skills-section-title {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  color: #000000;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Groups of skills */
+.skills-group {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.skills-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.skills-group-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0 0 50px 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Grid layout for skills icons */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 60px;
+  justify-items: center;
+  width: 100%;
+}
+
+.skills-grid-learning,
+.skills-grid-other {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Individual skill block */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  width: 120px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.skill-item:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon wrapping and sizing */
+.skill-icon-wrapper {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-item:hover .skill-icon-wrapper {
+  transform: scale(1.15);
+}
+
+/* Sizing Devicon fonts */
+.skill-icon-wrapper i {
+  font-size: 56px;
+  line-height: 1;
+  display: block;
+}
+
+/* Flag SVG icon styling */
+.skill-flag-svg {
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-flag-svg {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Labels below icons */
+.skill-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #000000;
+  text-transform: uppercase;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+  color: #333333;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .skills-section {
+    padding: 50px 0;
+  }
+  
+  .skills-header-box {
+    border-width: 5px;
+    padding: 12px 38px;
+    margin-bottom: 55px;
+  }
+  
+  .skills-section-title {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+  }
+  
+  .skills-grid-learning,
+  .skills-grid-other {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-group {
+    margin-bottom: 60px;
+  }
+  
+  .skills-group-title {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 550px) {
+  .skills-section {
+    padding: 40px 0;
+  }
+  
+  .skills-header-box {
+    border-width: 4px;
+    padding: 10px 28px;
+    margin-bottom: 45px;
+  }
+  
+  .skills-section-title {
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+  
+  .skills-grid,
+  .skills-grid-learning,
+  .skills-grid-other {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 20px;
+  }
+  
+  .skill-item {
+    width: 100px;
+  }
+  
+  .skill-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+  
+  .skill-icon-wrapper i {
+    font-size: 44px;
+  }
+  
+  .skill-flag-svg {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .skill-name {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  
+  .skills-group {
+    margin-bottom: 50px;
+  }
+  
+  .skills-group-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+  }
+}

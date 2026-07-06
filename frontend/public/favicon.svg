@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Website black background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+
+    <!-- Subtle shine -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(234,231,225,0.12)"/>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0)"/>
+      <stop offset="100%" style="stop-color:rgba(234,231,225,0.05)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background - website black -->
+  <circle cx="50" cy="50" r="48" fill="url(#bg)"/>
+
+  <!-- Shine overlay -->
+  <circle cx="50" cy="50" r="48" fill="url(#shine)"/>
+
+  <!-- Subtle beige border -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#eae7e1" stroke-width="2" opacity="0.3"/>
+
+  <!-- Stylized A - website beige/cream color -->
+  <path 
+    d="M 50 14 L 20 84 L 32 84 L 39 66 L 61 66 L 68 84 L 80 84 Z" 
+    fill="#eae7e1"
+  />
+  <!-- Inner triangle cutout -->
+  <path 
+    d="M 50 34 L 42 60 L 58 60 Z" 
+    fill="url(#bg)"
+  />
+</svg>

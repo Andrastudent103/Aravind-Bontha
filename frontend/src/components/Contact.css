@@ -1,0 +1,313 @@
+/* Contact Section - Editorial Minimalist Beige Theme */
+.contact-section {
+  position: relative;
+  width: 100%;
+  background-color: #eae7e1;
+  color: #111111;
+  padding: 80px 10%;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Header with Logo and Hand-drawn Circle */
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.contact-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: #111111;
+}
+
+.contact-hand-circle {
+  width: 54px;
+  height: 54px;
+  color: #111111;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand-circle-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-hand-circle:hover {
+  transform: rotate(45deg) scale(1.05);
+}
+
+/* Main Grid Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Left Column: Bold Editorial Typography & Socials */
+.contact-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0 0 24px 0;
+}
+
+.contact-title .italic-text {
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  margin: 0 0 0 25px; /* Slight offset indent matching the mockup */
+  color: #333333;
+}
+
+/* Right Column: Links and Inputs */
+.contact-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 20px;
+}
+
+/* Email Box */
+.contact-email-box {
+  border-bottom: 1.2px solid rgba(17, 17, 17, 0.15);
+  padding-bottom: 25px;
+  transition: border-color 0.4s ease;
+}
+
+.contact-email-box:hover {
+  border-color: rgba(17, 17, 17, 0.8);
+}
+
+.contact-email-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #111111;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-email-link:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+/* Social Media Icons & Grid */
+.contact-socials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+}
+
+.contact-social-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #111111;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 0;
+  width: fit-content;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-social-item:hover {
+  transform: translateX(4px);
+  opacity: 0.75;
+}
+
+/* Contact Form Section */
+.contact-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.6);
+  transition: color 0.3s ease;
+}
+
+.contact-form-group:focus-within .form-label {
+  color: #111111;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1.2px solid rgba(17, 17, 17, 0.15);
+  background: transparent;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #111111;
+  padding: 8px 0;
+  transition: border-color 0.4s ease;
+}
+
+.form-input:focus {
+  border-color: rgba(17, 17, 17, 0.85);
+}
+
+.form-textarea {
+  resize: none;
+  min-height: 70px;
+}
+
+.form-submit-wrapper {
+  margin-top: 10px;
+}
+
+.form-submit-btn {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 42px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: fit-content;
+}
+
+.form-submit-btn:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.form-submit-btn:disabled {
+  background: #2b704c;
+  color: #ffffff;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Decorative Squiggly Wave in Bottom Right */
+.contact-squiggly-decor {
+  position: absolute;
+  right: 6%;
+  bottom: 40px;
+  width: 120px;
+  height: auto;
+  color: rgba(17, 17, 17, 0.25);
+  pointer-events: none;
+}
+
+.squiggly-decor-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 60px 6%;
+  }
+
+  .contact-title {
+    font-size: 3.8rem;
+  }
+
+  .contact-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 50px 24px 80px 24px;
+  }
+
+  .contact-header {
+    margin-bottom: 50px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-left-col {
+    gap: 40px;
+  }
+
+  .contact-title {
+    font-size: 3.2rem;
+  }
+
+  .contact-subtitle {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .contact-right-col {
+    gap: 40px;
+  }
+
+  .contact-email-link {
+    font-size: 1.2rem;
+  }
+
+  .contact-squiggly-decor {
+    right: 24px;
+    bottom: 20px;
+    width: 80px;
+  }
+}

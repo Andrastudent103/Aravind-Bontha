@@ -1,0 +1,338 @@
+/* Projects (Portfolio) Section Styling */
+.projects-section {
+  position: relative;
+  width: 100%;
+  /* Light radial gradient to create depth, making white cards stand out */
+  background-color: #eae7e1;
+  color: #000000;
+  padding: 80px 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Header border box */
+.projects-header-box {
+  border: 7px solid #000000;
+  padding: 16px 54px;
+  margin-bottom: 80px;
+  display: inline-block;
+  background-color: transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+}
+
+.projects-header-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.projects-section-title {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  color: #000000;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Projects list layout */
+.projects-list {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Individual project card, matching cockroachpreneur Experience item */
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.25, 1);
+  box-sizing: border-box;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Reversing every second project card */
+.project-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Left side project content */
+.project-content {
+  flex: 1.1;
+  box-sizing: border-box;
+}
+
+.project-content h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #000000;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.project-content h3 {
+  font-size: 15px;
+  color: #4a4a4a;
+  margin: 0 0 18px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Timeline Period Capsule badge */
+.project-period {
+  display: inline-block;
+  background: linear-gradient(135deg, #1c1c1c, #000000);
+  color: #ffffff;
+  padding: 6px 18px;
+  border-radius: 25px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-content p {
+  color: #555555;
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin: 0 0 22px 0;
+  font-weight: 500;
+}
+
+/* Bullet list styling with ▸ */
+.project-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-content li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.project-content li:last-child {
+  margin-bottom: 0;
+}
+
+.project-content li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Right side project image container */
+.project-image {
+  flex: 0.9;
+  height: 310px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Showpiece image zoom and contrast hover states */
+.proj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.25, 1);
+  filter: grayscale(100%) contrast(1.15);
+  display: block;
+}
+
+.project-item:hover .proj-img {
+  filter: grayscale(0%) contrast(1.05);
+}
+
+/* Interactive glassmorphic demo button overlay */
+.project-demo-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 10px) scale(0.85);
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.25, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.project-item:hover .project-demo-btn {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  pointer-events: auto;
+}
+
+.project-demo-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, 0) scale(1.05);
+}
+
+.demo-btn-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.project-demo-btn:hover .demo-btn-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .project-item,
+  .project-item.reverse {
+    flex-direction: column;
+    gap: 35px;
+    padding: 35px;
+  }
+  
+  .project-image {
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+  }
+  
+  .project-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 50px 0;
+  }
+  
+  .projects-header-box {
+    border-width: 5px;
+    padding: 12px 38px;
+    margin-bottom: 60px;
+  }
+  
+  .projects-section-title {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+  
+  .project-item {
+    gap: 25px;
+    padding: 25px;
+  }
+  
+  .project-content h2 {
+    font-size: 20px;
+  }
+  
+  .project-content h3 {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  
+  .project-period {
+    padding: 5px 14px;
+    font-size: 10.5px;
+    margin-bottom: 18px;
+  }
+  
+  .project-content p {
+    font-size: 13.5px;
+    margin-bottom: 18px;
+  }
+  
+  .project-content li {
+    font-size: 13px;
+    padding-left: 22px;
+  }
+  
+  .project-content li::before {
+    font-size: 14px;
+  }
+  
+  .project-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 40px 0;
+  }
+  
+  .projects-header-box {
+    border-width: 4px;
+    padding: 10px 28px;
+    margin-bottom: 45px;
+  }
+  
+  .projects-section-title {
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+  
+  .project-item {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .project-content h2 {
+    font-size: 18px;
+  }
+  
+  .project-content h3 {
+    font-size: 12px;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+}
