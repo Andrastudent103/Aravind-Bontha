@@ -662,25 +662,27 @@
 
   .profile-image-container {
     position: absolute;
-    top: 0;
+    top: 120px; /* Black gap at the top for header */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 120px);
     margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
   }
 
   .profile-image {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 48% 100%;
+    object-position: 48% 0%; /* Align top of image to container top to prevent head crop */
     margin-top: 0;
-    transform: scale(0.98); /* Zoomed out slightly to fit perfectly with top gap */
-    transform-origin: center bottom;
+    transform: scale(1.0); /* Zoomed out slightly as requested */
+    transform-origin: 48% 0%;
   }
+
 
 
 
@@ -796,19 +798,28 @@
   }
 
   .profile-image-container {
-    height: 100%;
+    position: absolute;
+    top: 70px; /* Black gap at the top for header */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
     margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
   }
 
   .profile-image {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 48% 100%;
+    object-position: 48% 0%; /* Align top of image to container top to prevent head crop */
     margin-top: 0;
-    transform: scale(0.98); /* Zoomed out slightly to fit perfectly with top gap */
-    transform-origin: center bottom;
+    transform: scale(1.0); /* Zoomed out slightly as requested */
+    transform-origin: 48% 0%;
   }
+
 
 
 
